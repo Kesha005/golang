@@ -28,8 +28,6 @@ func main(){
 
 
 func getdatafromLink(link string , mychannel chan string){
-	_,err:=http.Get(link)
-	if err ==nil{
-		mychannel <- link
-	}
+	http.Get(link)
+	mychannel <- link
 }

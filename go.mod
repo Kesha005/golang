@@ -3,6 +3,7 @@ module goKesha
 go 1.19
 
 require (
+	github.com/Kesha005/go_package v0.0.0-20230416131425-45e88d87b0fa // indirect
 	github.com/bytedance/sonic v1.8.0 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
