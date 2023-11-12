@@ -9,3 +9,9 @@ func main(){
 	t := x[1:3]
 	fmt.Println(t)
 }
+
+
+type i interface{
+	intt()
+
+}
