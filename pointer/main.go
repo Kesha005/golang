@@ -13,8 +13,5 @@ func main(){
 	message := "Hello Kerim"
 	fmt.Println(message)
 	update(&message)
-
 	fmt.Println(message)
-
-	
 }
