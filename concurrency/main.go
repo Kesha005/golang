@@ -1,19 +1,29 @@
 package main
 
+import (
+	"fmt"
+	"time"
 
-import "fmt"
+	
+)
 
 
+func SayHello(msg string, cha chan string){
 
-
-func sayhello(){
-	fmt.Println("Hello Kerim")
+	time.Sleep(34)
+	cha <-"Hi Kerim"
 }
 
 
+
 func main(){
+	
 
+	cha := make(chan string)
 
-	go sayhello()
-	fmt.Println("Hello to concurrency")
+	go SayHello("hi", cha)
+
+	mesg := <-cha
+
+	fmt.Println(mesg)
 }
