@@ -1,8 +1,11 @@
 package main
+
+
 import (
    "fmt"
    "os"    //import fmt and os package
 )
+
 
 func CreateDirectory(name string){
    if err := os.Mkdir(name,0750); err!=nil{//creates directory with name and permission code

@@ -12,11 +12,13 @@ type User struct{
 	age int
 }
 
+
 func (user *User)UpdateUser(data User){
 	user.name = data.name
 	user.surname =data.surname
 	user.age= data.age
 }
+
 
 func main(){
 	fmt.Println("Hello User how are you user")
