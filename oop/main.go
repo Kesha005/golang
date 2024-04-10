@@ -1,33 +1,35 @@
 package main
 
-
-
-import(
+import (
 	"fmt"
 )
 
+func main() {
+	var manager User
+	var workers []User
+	manager.Name = "Kesha"
+	manager.Surname = "Saparow"
 
-
-type User struct{
-	name, surname string
-	age int
+	workers = append(workers, User{"Somename","SomeSurname"})
+	workers = append(workers, User{"Somename2","SomeSurname2"})
+	office := OfficceConstructor(manager,workers)
+	//Get office manager name
+	fmt.Println(office.Manager.Name)
 }
 
-
-
-func (u User)GetName()string{
-	return u.name
+type User struct {
+	Name    string
+	Surname string
 }
 
-
-func (u User)GetFullName()string{
-	return u.name+" "+u.surname
+type Officce struct {
+	Manager User
+	Workers []User
 }
 
-
-
-func main(){
-	user := User{"Kerimberdi","Saparow",18}
-	fmt.Println(user.GetFullName())
-	
+func OfficceConstructor(manager User, workers []User) *Officce {
+	return &Officce{
+		Manager: manager,
+		Workers: workers,
+	}
 }
