@@ -2,28 +2,30 @@ package main
 
 import (
 	"fmt"
+	"sync"
 	"time"
-
-	
 )
 
 
-func SayHello(msg string, cha chan string){
-
-	time.Sleep(34)
-	cha <-"Hi Kerim"
+func Printer(thing string){
+	for i:=0;  i<10; i++{
+		fmt.Println(i, thing)
+		time.Sleep(time.Second *1)
+	}
 }
 
 
-
 func main(){
-				
+	var wg sync.WaitGroup
+	wg.Add(1)
+	
 
-	cha := make(chan string)
+	go func ()  {
+		Printer("Hello ")
+		wg.Done()
+	}()
 
-	go SayHello("hi", cha)
+	wg.Wait()
+	
 
-	mesg := <-cha
-
-	fmt.Println(mesg)
 }

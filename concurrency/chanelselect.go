@@ -3,35 +3,30 @@ package main
 import (
 	"fmt"
 	"time"
-	
 )
 
-
-func main(){
+func main() {
 	numeral := make(chan int)
 	Stringval := make(chan string)
 	go GetNumral(numeral)
 	go getString(Stringval)
 
-	select{
+	select {
 	case firstChanel := <-numeral:
 		fmt.Println(firstChanel)
-	
+
 	case secondChanel := <-Stringval:
 		fmt.Println(secondChanel)
 	}
 
 }
 
-
-
-func GetNumral(nm chan int){
+func GetNumral(nm chan int) {
 	time.Sleep(2 * time.Second)
-	nm <-12
+	nm <- 12
 }
 
-
-func getString(st chan string){
+func getString(st chan string) {
 	time.Sleep(2 * time.Second)
-	st <-"Hello world"
+	st <- "Hello world"
 }
