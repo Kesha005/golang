@@ -9,7 +9,7 @@ import (
 func divide(x1, x2 int)(int,error){
 
 	if x2 ==0{
-		return 0, errors.New("Zero division error")
+		return 0, errors.New("Zero division error ")
 	}
 	result := x1/x2
 
